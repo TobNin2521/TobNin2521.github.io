@@ -5,6 +5,7 @@
 }
 .add-player {
     display: inline-flex;
+    margin: 1em;
 }
 .add-player input {
     background-color: #888;
@@ -12,4 +13,42 @@
     outline: none;
     border-radius: .5em;
     padding: .2em;
+    margin-right: .5em;
+}
+.initiative-row {
+    display: flex;
+    margin: 1em;
+}
+.initiative-row span {
+    width: 8em;
+}
+.initiative-row input {
+    background-color: #888;
+    border: none;
+    outline: none;
+    border-radius: .5em;
+    padding: .2em;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.next-init {
+    border-radius: .1em;
+    padding: .5em;
+    background-color: #888;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 1em;
+}
+.next-init:hover{
+    background-color: #a3a3a3;
+}
+.start-combat {
+    border-radius: .1em;
+    padding: .5em;
+    background-color: #888;
+    cursor: pointer;
+    display: inline-flex;
+}
+.start-combat:hover{
+    background-color: #a3a3a3;
 }
