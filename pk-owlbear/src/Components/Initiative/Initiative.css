@@ -1,0 +1,15 @@
+
+
+.initiative-row > svg, .add-player > svg {
+    height: 1.5em;
+}
+.add-player {
+    display: inline-flex;
+}
+.add-player input {
+    background-color: #888;
+    border: none;
+    outline: none;
+    border-radius: .5em;
+    padding: .2em;
+}

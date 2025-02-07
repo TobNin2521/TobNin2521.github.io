@@ -5,10 +5,10 @@ import { TabControl } from './Components/TabControl';
 
 export const App = () => {
   return (
-    <div className="App">
+    <div className="App overflow-hidden">
       <TabControl>
-        <Search />
         <Initiative />
+        <Search />
       </TabControl>
     </div>
   );

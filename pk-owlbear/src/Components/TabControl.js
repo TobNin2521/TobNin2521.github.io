@@ -29,7 +29,7 @@ export const TabControl = ({children}) => {
     };
 
     return (
-        <div className="tab-control">
+        <div className="tab-control overflow-hidden">
             {children.length > 1 ? (
                 <div className="tab-controls">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" onClick={prevTab}>
@@ -40,7 +40,7 @@ export const TabControl = ({children}) => {
                     </svg>
                 </div>
             ) : null}
-            <div className="tab-content">
+            <div className="tab-content overflow-hidden">
                 {currTab}
             </div>
         </div>

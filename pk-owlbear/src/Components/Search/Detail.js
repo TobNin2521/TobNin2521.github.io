@@ -47,7 +47,7 @@ export const Detail = ({result, onHide}) => {
     };
 
     return (
-        <div className={result !== null ? "detail shown" : "detail"}>
+        <div className={result !== null ? "detail shown" : "detail overflow-auto"}>
             <div className="detail-top-bar">
                 <div className="detail-title"><b>{name}</b></div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onClick={onHide}>
