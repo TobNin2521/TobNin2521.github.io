@@ -1,34 +1,30 @@
 import './Search.css';
 import {useEffect, useState} from 'react';
-import { SearchApi, SearchRoute, SearchRouteAndField } from '../../Logic/ApiController';
+import { PullItems, PullMonsters, PullSpells, SearchApi } from '../../Logic/ApiController';
 import { SearchResult } from './SearchResult';
 import OBR from "@owlbear-rodeo/sdk";
 import { Detail } from './Detail';
+import { StatBlock } from './StatBlock';
 
 export const Search = () => {
     const [searchVal, setSearchVal] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [selectedResult, setSelectedResult] = useState(null);
 
+    useEffect(() => {
+        PullSpells();
+        PullItems();
+        PullMonsters();
+    }, []);
+
     const onInputKeyUp = (e) => {
         if(e.key === 'Enter') {
-            doSearch();
+            setSearchResults(SearchApi(searchVal));
         }
     };
-    //https://5e.tools/data/bestiary/index.json
-    //https://5e.tools/data/items.json
-    //https://5e.tools/data/spells/index.json
+    
     const doSearch = () => {
-        let searchParam = searchVal.split(':');
-        if(searchParam.length === 1) {
-            SearchApi(searchVal, setSearchResults);
-        }
-        else if (searchParam.length === 2) {
-            SearchRoute(searchParam[0], searchParam[1], setSearchResults);
-        }
-        else if (searchParam.length === 3) {
-            SearchRouteAndField(searchParam[0], searchParam[1], searchParam[2], setSearchResults);
-        }
+        setSearchResults(SearchApi(searchVal));
     };
 
     const onResultClick = (result) => {

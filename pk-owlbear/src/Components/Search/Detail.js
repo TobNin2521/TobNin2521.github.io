@@ -7,6 +7,7 @@ import { Item } from "./Details/Item";
 import { Class } from "./Details/Class";
 import { Section } from "./Details/Section";
 import { Condition } from "./Details/Condition";
+import { StatBlock } from "./StatBlock";
 
 export const Detail = ({result, onHide}) => {
     const [name, setName] = useState("");
@@ -16,30 +17,18 @@ export const Detail = ({result, onHide}) => {
         setName("");
         setDetail(null);
         if(result !== null) {
-            fetch("https://api.open5e.com/v1/" + result.route + "?slug=" + result.slug).then(res => res.json()).then((res) => {
-                if(res !== undefined && res !== null && res.results !== null && res.results !== undefined && res.results.length > 0) {
-                    setName(res.results[0].name)
-                    setDetail(res.results[0]);
-                }
-            })
         }
     }, [result]);
     
     const getDetailInfo = () => {
         if(result !== null) {
-            switch(result.route) {
-                case 'classes/':
-                    return <Class detail={detail} />
+            switch(result.T) {
                 case 'spells/':
                     return <Spell detail={detail} />
-                case 'monsters/':
-                    return <Monster detail={detail} />
+                case 'm':
+                    return <StatBlock monster={result} />
                 case 'magicitems/':
                     return <Item detail={detail} />
-                case 'sections/':
-                    return <Section detail={detail} />
-                case 'conditions/':
-                    return <Condition detail={detail} />
                 default:
                     return <Condition detail={detail} />;
             }
