@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
 import './Detail.css';
-import { useSearchParams } from "react-router-dom";
-import { Monster } from "./Details/Monster";
-import { Spell } from "./Details/Spell";
-import { Item } from "./Details/Item";
-import { Class } from "./Details/Class";
-import { Section } from "./Details/Section";
-import { Condition } from "./Details/Condition";
 import { StatBlock } from "./StatBlock";
+import { SpellCard } from "./SpellCard";
+import { ItemCard } from "./ItemCard";
 
 export const Detail = ({result, onHide}) => {
     const [name, setName] = useState("");
@@ -23,14 +18,14 @@ export const Detail = ({result, onHide}) => {
     const getDetailInfo = () => {
         if(result !== null) {
             switch(result.T) {
-                case 'spells/':
-                    return <Spell detail={detail} />
+                case 's':
+                    return <SpellCard spell={result} />
                 case 'm':
                     return <StatBlock monster={result} />
-                case 'magicitems/':
-                    return <Item detail={detail} />
+                case 'i':
+                    return <ItemCard detail={detail} />
                 default:
-                    return <Condition detail={detail} />;
+                    return null;
             }
         }
     };

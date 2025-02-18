@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        
+.spell-container {
+    font-family: 'Scada', serif;
+    background: linear-gradient(to right, #1e130c, #9a8478);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.spell-card {
+    width: 350px;
+    background: #fff3e6;
+    border: 3px solid #5a3825;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+.spell-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #5a3825;
+    border-bottom: 2px solid #8b5e3c;
+    padding-bottom: 5px;
+}
+.spell-info {
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 5px 0;
+    color: #4a3222;
+}
+.spell-info strong {
+    color: #a65f46;
+}
+.spell-description {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #3a2d1f;
+    background: #fce5d5;
+    padding: 10px;
+    border-radius: 8px;
+}
