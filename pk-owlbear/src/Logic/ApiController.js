@@ -30,13 +30,21 @@ const PullMonsters = () => {
     const group = require("../Data/Monsters/legendarygroups.json").legendaryGroup;    
     let gDict = {};    
     for(let i = 0; i < group.length; i++){
-        gDict[group[i].name] = group[i];
+        if (gDict[group[i].name] === undefined) gDict[group[i].name] = group[i];
     }
     for(let i = 0; i < monsters.length; i++) {
         if(gDict[monsters[i].name] !== undefined) {
             let fromM = gDict[monsters[i].name];
             for(let key in fromM) {
                 if(monsters[i][key] === undefined) monsters[i][key] = fromM[key];
+            }
+        }
+        if (monsters[i].legendaryGroup !== undefined) {
+            if(gDict[monsters[i].legendaryGroup.name] !== undefined) {
+                let fromM = gDict[monsters[i].legendaryGroup.name];
+                for (let key in fromM) {
+                    if (monsters[i][key] === undefined) monsters[i][key] = fromM[key];
+                }
             }
         }
     }

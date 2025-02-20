@@ -23,7 +23,7 @@ export const Detail = ({result, onHide}) => {
                 case 'm':
                     return <StatBlock monster={result} />
                 case 'i':
-                    return <ItemCard detail={detail} />
+                    return <ItemCard item={result} />
                 default:
                     return null;
             }

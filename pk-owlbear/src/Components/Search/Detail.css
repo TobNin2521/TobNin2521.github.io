@@ -5,9 +5,9 @@
     top: 0;
     left: 100%;
     transition: left 300ms;
-    background-color: #8a55bd;
+    background-color: #494949;
     max-height: calc(100vh);
-    overflow-y: auto;
+    /*overflow-y: auto;*/
 }
 .shown {
     left: 0 !important;

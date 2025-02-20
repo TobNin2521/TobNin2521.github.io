@@ -20,4 +20,6 @@
 }
 .search-result svg {
     height: 2em;
+    fill: #fff;
+    align-self: center;
 }

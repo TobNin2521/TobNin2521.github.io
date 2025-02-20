@@ -66,6 +66,7 @@ export const Initiative = () => {
                         },
                         ]).fontSize(100).fillColor(currentInit === i ? '#500': '#fff')
                         .attachedTo('back').position({x: back[0].position.x + 50, y: back[0].position.y + (50 + (120 * i))})            
+                        .rotation(back[0].rotation)
                         .build();
                         items.push(text);
                     }
